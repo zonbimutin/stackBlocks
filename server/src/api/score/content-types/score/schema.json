@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "scores",
+  "info": {
+    "singularName": "score",
+    "pluralName": "scores",
+    "displayName": "score",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "biginteger"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "scores"
+    }
+  }
+}
