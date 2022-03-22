@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "eventemitter3": "^4.0.7",
     "firebase": "^9.6.6",
     "next": "12.0.10",
     "react": "17.0.2",
