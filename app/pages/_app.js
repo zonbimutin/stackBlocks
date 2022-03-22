@@ -1,16 +1,38 @@
+import {useEffect} from "react";
+import "bootstrap/dist/css/bootstrap.min.css"
+import "react-toastify/dist/ReactToastify.css"
+
+
 import AuthProvider from "../context/AuthProvider";
-import useAuth from "../hooks/useAuth";
+import client from "../apollo-client";
 
 import '../styles/globals.css'
+import {ApolloProvider} from "@apollo/client";
+import {ToastContainer} from "react-toastify";
+
 const MyApp = ({ Component, pageProps }) => {
 
-	const {user} = useAuth()
-	console.log(user)
+	useEffect(() => {
+		import("bootstrap/dist/js/bootstrap");
+	}, []);
 
 	return (
-		<AuthProvider>
-			<Component {...pageProps} />
-		</AuthProvider>
+		<ApolloProvider client={client}>
+			<AuthProvider>
+				<Component {...pageProps} />
+				<ToastContainer
+					position="top-right"
+					autoClose={5000}
+					hideProgressBar
+					newestOnTop
+					closeOnClick
+					rtl={false}
+					pauseOnFocusLoss
+					draggable
+					pauseOnHover
+				/>
+			</AuthProvider>
+		</ApolloProvider>
 	)
 }
 
