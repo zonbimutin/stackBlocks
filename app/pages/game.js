@@ -6,6 +6,7 @@ import Observer, { EVENTS } from '../Observer';
 import styles from '../styles/Home.module.css'
 export default function Home() {
     const [userInterface, setUserInterface] = useState(null);
+    const [isStarted, setIsStarted] = useState(false);
 
     useEffect(() => {
         if (!userInterface) {
@@ -14,6 +15,7 @@ export default function Home() {
 
             let game = new Gameplay(document.querySelector('#game-container'));
         }
+
     }, [])
 
     useEffect(() => {
@@ -27,11 +29,17 @@ export default function Home() {
     }
 
     const start = () => {
+        setIsStarted(true);
         Observer.emit(EVENTS.START);
     }
 
+    const click = () => {
+        if(!isStarted) return;
+        Observer.emit(EVENTS.CLICK);
+    }
+
 	return (
-		<div className={styles.container}>
+		<div className={styles.container} onClick={click}>
             <div id="points" className="animate__animated noselect">0</div>
             <div id="button-start" className="animate__animated noselect">
                 <div>StackBlocks</div>
