@@ -1,5 +1,6 @@
 import { useEffect, useImperativeHandle, useState } from 'react';
 import UserInterface from '../objects/UserInterface';
+import Gameplay from '../objects/Gameplay';
 import Observer, { EVENTS } from '../Observer';
 
 import styles from '../styles/Home.module.css'
@@ -10,6 +11,8 @@ export default function Home() {
         if (!userInterface) {
             let inter = new UserInterface();
             setUserInterface(inter);
+
+            // let game = new Gameplay(document.querySelector('#game-container'));
         }
     }, [])
 

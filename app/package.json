@@ -8,11 +8,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tweenjs/tween.js": "^18.3.0",
+    "@types/three": "^0.139.0",
     "eventemitter3": "^4.0.7",
     "firebase": "^9.6.6",
     "next": "12.0.10",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "three": "^0.139.2"
   },
   "devDependencies": {
     "eslint": "8.8.0",
