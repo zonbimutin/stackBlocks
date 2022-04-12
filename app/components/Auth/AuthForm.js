@@ -2,6 +2,7 @@ import {useState} from 'react';
 // Components
 import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
+import {Button} from "react-bootstrap";
 
 const AuthForm = (props) => {
 
@@ -23,13 +24,13 @@ const AuthForm = (props) => {
                     { showLogin ? (
                         <>
                             Vous n'avez pas de compte ?
-                            <span onClick={() => setShowLogin(!showLogin)} >S'enregistrer!</span>
+                            <span className={'link-primary ms-2'} style={{cursor: "pointer"}} onClick={() => setShowLogin(!showLogin)} variant="link">S'enregistrer!</span>
                         </>
 
                     ) : (
                         <>
                             Vous avez déjà un compte?
-                            <span onClick={() => setShowLogin(!showLogin)} >Se connecter!</span>
+                            <span className={'link-primary ms-2'} style={{cursor: "pointer"}} onClick={() => setShowLogin(!showLogin)} variant="link">Se connecter!</span>
                         </>
                     ) }
                 </p>

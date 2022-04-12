@@ -77,31 +77,35 @@ const LoginForm = (props) => {
         },
     });
 
-    console.log(auth);
-
     return (
         <>
-            <div className="form-title">Se connecter!</div>
+            <h2 className="form-title mb-3 ">Se connecter!</h2>
             <Form className="login-form parki form-group" onSubmit={formik.handleSubmit}>
-                <Form.Control
-                    type="text"
-                    placeholder="Email"
-                    name="identifier"
-                    value={formik.values.identifier}
-                    onChange={formik.handleChange}
-                    error={formik.errors.identifier && true}
-                />
-                <Form.Control
-                    type="password"
-                    placeholder="Password"
-                    name="password"
-                    value={formik.values.password}
-                    onChange={formik.handleChange}
-                    error={formik.errors.password && true}
-                />
+                <Form.Group className="mb-3">
+                    <Form.Control
+                        type="email"
+                        placeholder="Email"
+                        name="identifier"
+                        value={formik.values.identifier}
+                        onChange={formik.handleChange}
+                        isInvalid={formik.errors.identifier && true}
+                        // error={formik.errors.identifier && true}
+                    />
+                </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Control
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        value={formik.values.password}
+                        onChange={formik.handleChange}
+                        isInvalid={formik.errors.password && true}
+                        // error={formik.errors.password && true}
+                    />
+                </Form.Group>
 
-                <Button type="submit" className="parki btn btn-gradient-primary btn-lg ">Se connecter!</Button>
-                {error && <p className="submit-error">{error}</p>}
+                <Button type="submit" className="parki btn btn-gradient-primary btn-lg mb-3">Se connecter!</Button>
+                {error && <p className="text-danger">{error}</p>}
             </Form>
         </>     
     )

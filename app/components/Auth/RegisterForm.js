@@ -69,41 +69,51 @@ const RegisterForm = (props) => {
 
 	return (
 			<>
-			<div className="form-title">S'enregistrer!</div>
+			<h2 className="mb-3">S'enregistrer!</h2>
 			<Form className="register-form parki form-group" onSubmit={formik.handleSubmit}>
-				<Form.Control
-					type="text"
-					placeholder="Username"
-					name="username"
-					value={formik.values.username}
-					onChange={formik.handleChange}
-					error={formik.errors.username && true}
-				/>
-				<Form.Control
-					type="text"
-					placeholder="Email"
-					name="email"
-					value={formik.values.email}
-					onChange={formik.handleChange}
-					error={formik.errors.email && true}
-				/>
-				<Form.Control
-					type="password"
-					placeholder="Password"
-					name="password"
-					value={formik.values.password}
-					onChange={formik.handleChange}
-					error={formik.errors.password && true}
-				/>
-				<Form.Control
-					type="password"
-					placeholder="Repeat Password"
-					name="repeatPassword"
-					value={formik.values.repeatPassword}
-					onChange={formik.handleChange}
-					error={formik.errors.repeatPassword && true}
-				/>
-				<Button type="submit" className="parki btn btn-gradient-primary btn-lg">S'enregistrer!</Button>
+				<Form.Group className={"mb-3"}>
+					<Form.Control
+						type="text"
+						placeholder="Username"
+						name="username"
+						value={formik.values.username}
+						onChange={formik.handleChange}
+						isInvalid={formik.errors.username && true}
+					/>
+				</Form.Group>
+				<Form.Group className={"mb-3"}>
+					<Form.Control
+						type="text"
+						placeholder="Email"
+						name="email"
+						value={formik.values.email}
+						onChange={formik.handleChange}
+						isInvalid={formik.errors.email && true}
+					/>
+				</Form.Group>
+				<Form.Group className={"mb-3"}>
+					<Form.Control
+						type="password"
+						placeholder="Password"
+						name="password"
+						value={formik.values.password}
+						onChange={formik.handleChange}
+						isInvalid={formik.errors.password && true}
+					/>
+				</Form.Group>
+				<Form.Group className={"mb-3"}>
+					<Form.Control
+						type="password"
+						placeholder="Repeat Password"
+						name="repeatPassword"
+						value={formik.values.repeatPassword}
+						onChange={formik.handleChange}
+						isInvalid={formik.errors.repeatPassword && true}
+					/>
+				</Form.Group>
+				
+				<Button type="submit" className="parki btn btn-gradient-primary btn-lg mb-3">S'enregistrer!</Button>
+				
 			</Form>
 		</>
 	)
