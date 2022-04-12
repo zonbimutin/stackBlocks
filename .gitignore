@@ -92,3 +92,9 @@ typings/
 app/package-lock.json
 
 package-lock.json
+
+server/.tmp/
+
+server/build/
+
+server/.strapi-updater.json
