@@ -1,7 +1,7 @@
 import {useMutation} from "@apollo/client";
-import {LOGIN} from "../gql/User";
 import useAuth from "../hooks/useAuth";
 import {SAVE_SCORE} from "../gql/Score";
+import UserScore from "../components/Score/UserScore"
 
 const Score = () => {
 	
@@ -9,11 +9,10 @@ const Score = () => {
 	const [createScore] = useMutation(SAVE_SCORE);
 	
 	// Hook useAuth
-	const { auth, setUser } = useAuth();
-	
-	console.log(auth)
-	
+	const { auth } = useAuth();
+
 	const saveScore = async (value) => {
+		
 		try {
 			const { data } = await createScore({
 				variables: {
@@ -33,9 +32,11 @@ const Score = () => {
 	
 	return (
 		<div>
-			<button onClick={() => saveScore(5)}>Save</button>
+			<button onClick={() => saveScore(10)}>Save</button>
+			{auth && <UserScore auth={auth}/>}
 		</div>
 	)
 }
 
 export default Score
+
