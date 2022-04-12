@@ -13,7 +13,6 @@ export const REGISTER = gql`
 	}
 `;
 
-// Queries
 export const LOGIN = gql`
 	mutation Login($input: UsersPermissionsLoginInput!) {
 	  login(input: $input) {
@@ -22,6 +21,8 @@ export const LOGIN = gql`
 	}
 `;
 
+
+// Queries
 export const VALIDATE_TOKEN = gql`
   query validateToken ($token: TokenInput) {
     validateToken(token: $token){
