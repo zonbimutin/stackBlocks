@@ -10,6 +10,7 @@ import '../styles/globals.css'
 import '../styles/animate.min.css'
 import {ApolloProvider} from "@apollo/client";
 import {ToastContainer} from "react-toastify";
+import Global from "../components/Global/Global";
 
 const MyApp = ({ Component, pageProps }) => {
 
@@ -20,7 +21,9 @@ const MyApp = ({ Component, pageProps }) => {
 	return (
 		<ApolloProvider client={client}>
 			<AuthProvider>
-				<Component {...pageProps} />
+				<Global>
+					<Component {...pageProps} />
+				</Global>
 				<ToastContainer
 					position="top-right"
 					autoClose={5000}

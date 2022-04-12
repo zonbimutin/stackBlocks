@@ -11,10 +11,7 @@ const AuthModal = () => {
 	
 	return (
 		<>
-			<Button variant="primary" onClick={handleShow}>
-				Login
-			</Button>
-			
+			<Button variant="primary" onClick={handleShow}>Login</Button>
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>
 					<Modal.Title>Modal heading</Modal.Title>

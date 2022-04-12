@@ -62,12 +62,6 @@
       "target": "plugin::users-permissions.role",
       "inversedBy": "users",
       "configurable": false
-    },
-    "scores": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::score.score",
-      "mappedBy": "user"
     }
   }
 }
