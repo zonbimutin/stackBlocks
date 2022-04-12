@@ -1,6 +1,6 @@
 import { useEffect, useImperativeHandle, useState } from 'react';
 import UserInterface from '../objects/UserInterface';
-import Gameplay from '../objects/Gameplay';
+import { Gameplay } from '../objects/Gameplay';
 import Observer, { EVENTS } from '../Observer';
 
 import styles from '../styles/Home.module.css'
@@ -12,7 +12,7 @@ export default function Home() {
             let inter = new UserInterface();
             setUserInterface(inter);
 
-            // let game = new Gameplay(document.querySelector('#game-container'));
+            let game = new Gameplay(document.querySelector('#game-container'));
         }
     }, [])
 
@@ -26,12 +26,16 @@ export default function Home() {
         Observer.emit(EVENTS.NEW_GAME);
     }
 
+    const start = () => {
+        Observer.emit(EVENTS.START);
+    }
+
 	return (
 		<div className={styles.container}>
             <div id="points" className="animate__animated noselect">0</div>
             <div id="button-start" className="animate__animated noselect">
                 <div>StackBlocks</div>
-                <button>Start</button>
+                <button onClick={start}>Start</button>
             </div>
             <div id="gameover" className="animate__animated noselect">
                 Game Over
