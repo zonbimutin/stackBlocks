@@ -7,6 +7,7 @@ import AuthProvider from "../context/AuthProvider";
 import client from "../apollo-client";
 
 import '../styles/globals.css'
+import '../styles/animate.min.css'
 import {ApolloProvider} from "@apollo/client";
 import {ToastContainer} from "react-toastify";
 
