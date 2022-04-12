@@ -88,3 +88,7 @@ typings/
 .dynamodb/
 
 .idea/
+
+app/package-lock.json
+
+package-lock.json
