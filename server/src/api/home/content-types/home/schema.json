@@ -4,15 +4,25 @@
   "info": {
     "singularName": "home",
     "pluralName": "homes",
-    "displayName": "home"
+    "displayName": "home",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string"
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.hero"
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "slices.team",
+        "slices.text-image"
+      ]
     }
   }
 }

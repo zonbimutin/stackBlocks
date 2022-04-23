@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_shared_cards",
+  "info": {
+    "displayName": "Card",
+    "icon": "id-card-alt"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button"
+    }
+  }
+}

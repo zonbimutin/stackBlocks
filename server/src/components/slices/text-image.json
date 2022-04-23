@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_slices_text_images",
+  "info": {
+    "displayName": "Text Image",
+    "icon": "address-card"
+  },
+  "options": {},
+  "attributes": {
+    "textPosition": {
+      "type": "enumeration",
+      "enum": [
+        "right",
+        "left"
+      ],
+      "default": "left"
+    },
+    "text": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.text"
+    },
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image"
+    }
+  }
+}

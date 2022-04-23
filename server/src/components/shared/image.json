@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_shared_images",
+  "info": {
+    "displayName": "Image",
+    "icon": "image"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "ratio": {
+      "type": "enumeration",
+      "enum": [
+        "landscape",
+        "portrait",
+        "square",
+        "picture"
+      ],
+      "default": "picture"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.link"
+    }
+  }
+}

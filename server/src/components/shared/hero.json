@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_heroes",
+  "info": {
+    "displayName": "Hero",
+    "icon": "apple-alt"
+  },
+  "options": {},
+  "attributes": {
+    "background": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "text": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.text"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_slices_teams",
+  "info": {
+    "displayName": "Team",
+    "icon": "users",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "global": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.text"
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.link"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_shared_texts",
+  "info": {
+    "displayName": "Text",
+    "icon": "align-left",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "align": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "center",
+        "right"
+      ]
+    },
+    "label": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.button"
+    }
+  }
+}
