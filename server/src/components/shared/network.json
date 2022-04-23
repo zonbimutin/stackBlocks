@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_networks",
+  "info": {
+    "displayName": "Network",
+    "icon": "dove"
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "facebook",
+        "twitter",
+        "instagram",
+        "linkedin"
+      ]
+    }
+  }
+}
