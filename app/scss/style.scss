@@ -1,0 +1,41 @@
+/**************************************
+    Modules
+***************************************/
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~animate.css";
+//@import "~slick-carousel/slick/slick.css";
+//@import "~slick-carousel/slick/slick-theme.css";
+@import "~react-toastify/dist/ReactToastify.css";
+
+
+
+/**************************************
+    Default Styles
+***************************************/
+@import 'default/variables';
+@import 'default/mixins';
+@import 'default/reset';
+@import 'default/typography';
+@import 'default/extend';
+@import 'default/animations';
+@import 'default/shortcode';
+@import 'default/spacing';
+
+/**************************************
+    Components
+***************************************/
+@import "components/componets";
+
+/**************************************
+    Template
+***************************************/
+@import "template/global";
+@import "template/dark-version";
+@import "template/body";
+
+
+/**************************************
+    Sections
+***************************************/
+@import "sections/about";
+@import "sections/service";

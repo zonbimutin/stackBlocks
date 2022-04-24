@@ -11,9 +11,15 @@ const AuthModal = () => {
 	
 	return (
 		<>
-			<Button variant="primary" onClick={handleShow}>Login</Button>
-			<Modal show={show} onHide={handleClose}>
-				<Modal.Body className={"p-5"}>
+			<Button className={'btn btn-default btn-hover-white size-md ms-2'} onClick={handleShow}>Login</Button>
+			<Modal
+				show={show}
+				onHide={handleClose}
+				aria-labelledby="contained-modal-title-vcenter"
+				centered
+				contentClassName={'rounded-lg'}
+			>
+				<Modal.Body className={"p-5"} >
 					<AuthForm/>
 				</Modal.Body>
 			</Modal>

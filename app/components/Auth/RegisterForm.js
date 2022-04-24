@@ -69,7 +69,7 @@ const RegisterForm = (props) => {
 
 	return (
 			<>
-			<h2 className="mb-3">S'enregistrer!</h2>
+			<h2 className="mb-3 theme-gradient">S'enregistrer!</h2>
 			<Form className="register-form parki form-group" onSubmit={formik.handleSubmit}>
 				<Form.Group className={"mb-3"}>
 					<Form.Control
@@ -112,7 +112,7 @@ const RegisterForm = (props) => {
 					/>
 				</Form.Group>
 				
-				<Button type="submit" className="parki btn btn-gradient-primary btn-lg mb-3">S'enregistrer!</Button>
+				<Button type="submit" className="btn btn-default mb-3">S'enregistrer!</Button>
 				
 			</Form>
 		</>

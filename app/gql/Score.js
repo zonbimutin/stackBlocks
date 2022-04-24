@@ -19,6 +19,7 @@ query Scores {
     data {
       attributes {
         value
+        createdAt
         user {
           data {
             attributes {
@@ -38,6 +39,7 @@ query Scores($filters : ScoreFiltersInput) {
     data {
       attributes {
         value
+        createdAt
         user {
           data {
             attributes {
