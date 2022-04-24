@@ -9,13 +9,15 @@ import * as TWEEN from '@tweenjs/tween.js/dist/tween.umd';
 import UserInterface from '../objects/UserInterface';
 
 class Scene1 extends Scene {
-	constructor() {
+	constructor(callback) {
 		super();
 		// const userInterface = new UserInterface();
-		this.background = new Color('skyblue').convertSRGBToLinear();
+		// this.background = new Color('skyblue').convertSRGBToLinear();
 
 		this.stack_points = 0;
 		this.game_over = true;
+		console.log(callback)
+		this.callback = callback
 
 		this.create();
 		this.events();
@@ -27,7 +29,7 @@ class Scene1 extends Scene {
 			width: 200,
 			height: 200,
 			alt: 200,
-			color: 0x2c3e50
+			color: 0xD74143
 		});
 		this.add(this.base_cube);
 
@@ -36,8 +38,8 @@ class Scene1 extends Scene {
 		this.add(this.boxes_group);
 
 		// Luces
-		const ambientLight = new HemisphereLight(0xffffbb, 0x080820, .5);
-		const light = new DirectionalLight(0xffffff, 1.0);
+		const ambientLight = new HemisphereLight(0xffffbb, 0x080820, 1.5);
+		const light = new DirectionalLight(0xffffff, 2.0);
 		this.add(light, ambientLight);
 	}
 
@@ -103,7 +105,10 @@ class Scene1 extends Scene {
 		});
 
 		Observer.on(EVENTS.GAME_OVER, () => {
+			
 			if(!this.game_over) {
+				if(this.callback) this.callback(this.stack_points)
+				console.log('gameover')
 				this.stack_points = 0;
 				const tween_gameover = new TWEEN.Tween(this.getLastBox().position)
 				.to({ y: this.getLastBox().position.y + 300 }, 1000)
@@ -111,6 +116,8 @@ class Scene1 extends Scene {
 				tween_gameover.start();
 			}
 			this.game_over = true;
+			
+			
 		})
 
 	}

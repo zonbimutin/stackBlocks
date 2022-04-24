@@ -5,14 +5,14 @@ import Observer, { EVENTS } from '../Observer';
 import * as TWEEN from '@tweenjs/tween.js/dist/tween.umd';
 
 export class Gameplay {
-	constructor(container) {
+	constructor(container, callback) {
 		this.container = container;
 
 		this.camera_pan_up = 40;
 		this.camera_y = 300;
+		this.callback = callback
 
-
-		this.scene = new Scene1();
+		this.scene = new Scene1(this.callback);
 
 		// ## Camera's config
 		this.camera = new OrthographicCamera(
@@ -31,8 +31,10 @@ export class Gameplay {
 		// ## Renderer's config
 		this.renderer = new WebGLRenderer({
 			antialias: true,
+			alpha: true
 		})
 		this.renderer.setPixelRatio(window.devicePixelRatio);
+		this.renderer.setClearColor( 0x000000, 0 );
 
 		// sRGBEncoding
 		this.renderer.outputEncoding = sRGBEncoding;

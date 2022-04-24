@@ -1,39 +1,47 @@
-import {useMutation} from "@apollo/client";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import useAuth from "../hooks/useAuth";
-import {SAVE_SCORE} from "../gql/Score";
 import UserScore from "../components/Score/UserScore"
+import PlayersScore from "../components/Score/PlayersScore";
+
 
 const Score = () => {
 	
-	// GraphQL mutation
-	const [createScore] = useMutation(SAVE_SCORE);
-	
 	// Hook useAuth
 	const { auth } = useAuth();
-
-	const saveScore = async (value) => {
-		
-		try {
-			const { data } = await createScore({
-				variables: {
-					input: {
-						value,
-						user: auth.id
-					}
-				}
-			});
-			
-			console.log(data)
-			
-		} catch (error) {
-			console.log(error)
-		}
+	
+	const style = {
+		backgroundImage: `url("/bg-game.jpg")`
 	}
 	
 	return (
-		<div>
-			<button onClick={() => saveScore(10)}>Save</button>
-			{auth && <UserScore auth={auth}/>}
+		<div id={"scores"} className={"fix"}>
+			<div className="slider-wrapper">
+				<div className="slide fullscreen slider-paralax slider-style-3 bg_image " style={style}>
+					<div className="container h-100">
+						<div className={`inner h-100 p-0`}>
+							<h1>Scoreboard</h1>
+							<div className={'card h-100 p-4'} style={{borderRadius: '3rem'}}>
+								<Tabs>
+									<TabList className={`tab-style--1 justify-content-center`}>
+										<Tab className={'ms-4 me-4'}>TOP 10 PLAYERS SCORES</Tab>
+										{auth && <Tab className={'ms-4 me-4'}>MY TOP 10 SCORES </Tab>}
+									</TabList>
+									
+									<TabPanel>
+										<PlayersScore/>
+									</TabPanel>
+									{auth &&
+										<TabPanel>
+											<UserScore auth={auth}/>
+										</TabPanel>
+									}
+								</Tabs>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	)
 }

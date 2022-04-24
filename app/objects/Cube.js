@@ -7,8 +7,8 @@ export class Cube extends Mesh {
 		this.geometry = new BoxBufferGeometry(size, size, size);
 		this.material = new MeshStandardMaterial({
 			color: new Color('orangered').convertSRGBToLinear(),
-			flatShading: true,
-			roughness: .5
+			// flatShading: true,
+			// roughness: .5
 		});
 	}
 }

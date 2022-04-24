@@ -49,7 +49,6 @@ const LoginForm = (props) => {
 
             try {
                 const logUser = formData;
-                console.log(logUser)
 
                 const { data } = await login({
                     variables: {
@@ -72,14 +71,13 @@ const LoginForm = (props) => {
 
             } catch (error) {
                 setError(error.message);
-                console.log(error);
             }
         },
     });
 
     return (
         <>
-            <h2 className="form-title mb-3 ">Se connecter!</h2>
+            <h2 className="form-title mb-3 theme-gradient">Se connecter!</h2>
             <Form className="login-form parki form-group" onSubmit={formik.handleSubmit}>
                 <Form.Group className="mb-3">
                     <Form.Control
@@ -104,7 +102,7 @@ const LoginForm = (props) => {
                     />
                 </Form.Group>
 
-                <Button type="submit" className="parki btn btn-gradient-primary btn-lg mb-3">Se connecter!</Button>
+                <Button type="submit" className="btn btn-default mb-3">Se connecter!</Button>
                 {error && <p className="text-danger">{error}</p>}
             </Form>
         </>     
