@@ -33,11 +33,10 @@ class Scene1 extends Scene {
 		});
 		this.add(this.base_cube);
 
-		// grupo de cajas
+		// groupe
 		this.boxes_group = new Group();
 		this.add(this.boxes_group);
 
-		// Luces
 		const ambientLight = new HemisphereLight(0xffffbb, 0x080820, 1.5);
 		const light = new DirectionalLight(0xffffff, 2.0);
 		this.add(light, ambientLight);
@@ -68,15 +67,14 @@ class Scene1 extends Scene {
 			this.stack_points++;
 			Observer.emit(EVENTS.UPDATE_POINTS, this.stack_points);
 
-			// Removemos el bloque principal
+			//  On enlève le groupe principal
 			this.boxes_group.remove(this.getLastBox());
 
-			// Espacio para cortar el bloque
+			// espace
 			const actual_base_cut = new SlicesBox(new_box);
 			this.boxes_group.add(actual_base_cut.getBase());
 			this.add(actual_base_cut.getCut());
 
-			// Efecto del bloque cortado
 			const tween_cut = new TWEEN.Tween(actual_base_cut.getCut().position)
 				.to({
 					[new_box.axis]: actual_base_cut.getCut().position[new_box.axis] + (200 * new_box.direction)
@@ -96,7 +94,7 @@ class Scene1 extends Scene {
 				});
 			tween_cut_alpha.start();
 
-			// Bloque nuevo
+			// nouveau block
 			this.newBox({
 				width: new_box.base.width,
 				height: new_box.base.height,

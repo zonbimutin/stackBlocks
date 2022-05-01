@@ -11,7 +11,7 @@ class BoxCreator extends Mesh {
 		});
 		this.material.color.convertSRGBToLinear();
 
-		// Variables propias
+		// Variables
 		this.color = color;
 		this.dimension = {width, height}
 
