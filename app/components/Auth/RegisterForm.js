@@ -1,7 +1,7 @@
 import React from 'react';
 // GraphQL 
 import { useMutation } from "@apollo/client";
-import { REGISTER } from "../../gql/user";
+import { REGISTER } from "../../gql/User";
 // Form validation
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -69,7 +69,7 @@ const RegisterForm = (props) => {
 
 	return (
 			<>
-			<h2 className="mb-3 theme-gradient">S'enregistrer!</h2>
+			<h2 className="mb-3 theme-gradient">{`S'enregistrer!`}</h2>
 			<Form className="register-form parki form-group" onSubmit={formik.handleSubmit}>
 				<Form.Group className={"mb-3"}>
 					<Form.Control
@@ -112,7 +112,7 @@ const RegisterForm = (props) => {
 					/>
 				</Form.Group>
 				
-				<Button type="submit" className="btn btn-default mb-3">S'enregistrer!</Button>
+				<Button type="submit" className="btn btn-default mb-3">{`S'enregistrer!`}</Button>
 				
 			</Form>
 		</>

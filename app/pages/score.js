@@ -20,21 +20,23 @@ const Score = () => {
 					<div className="container h-100">
 						<div className={`inner h-100 p-0`}>
 							<h1>Scoreboard</h1>
-							<div className={'card h-100 p-4'} style={{borderRadius: '3rem'}}>
-								<Tabs>
+							<div className={'card h-100 overflow-hidden p-4'} style={{borderRadius: '3rem'}}>
+								<Tabs className={`h-100`}>
 									<TabList className={`tab-style--1 justify-content-center`}>
 										<Tab className={'ms-4 me-4'}>TOP 10 PLAYERS SCORES</Tab>
 										{auth && <Tab className={'ms-4 me-4'}>MY TOP 10 SCORES </Tab>}
 									</TabList>
-									
-									<TabPanel>
-										<PlayersScore/>
-									</TabPanel>
-									{auth &&
+									<div className={`h-100 overflow-auto`}>
 										<TabPanel>
-											<UserScore auth={auth}/>
+											<PlayersScore/>
 										</TabPanel>
-									}
+										{auth &&
+											<TabPanel>
+												<UserScore auth={auth}/>
+											</TabPanel>
+										}
+										
+									</div>
 								</Tabs>
 							</div>
 							

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 // GraphQL
 import { useMutation } from "@apollo/client";
-import { LOGIN } from "../../gql/user";
+import { LOGIN } from "../../gql/User";
 // Token manage
 import { setToken } from "../../utils/token";
 // Hooks

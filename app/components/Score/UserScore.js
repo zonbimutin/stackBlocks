@@ -7,13 +7,17 @@ const UserScore = ({auth}) => {
 	
 	const [scores, setScores] = useState([])
 	
+	console.log(auth)
+	
 	const { data, loading, refetch } = useQuery(USER_SCORES, {
-		filters: {
-			user: {
-				id: {
-					eq: auth.id
+		variables: {
+			filters: {
+				user: {
+					id: {
+						eq: auth.id
+					}
 				}
-			}
+			},
 		},
 		fetchPolicy: "no-cache"
 	});
@@ -21,6 +25,7 @@ const UserScore = ({auth}) => {
 	useEffect(()=>{
 		if(data) {
 			if(data.scores.data) setScores(data.scores.data)
+			console.log(data)
 		}
 	}, [data])
 	

@@ -23,8 +23,8 @@ const AuthForm = (props) => {
                 <p>
                     { showLogin ? (
                         <>
-                            Vous n'avez pas de compte ?
-                            <span className={'link-primary theme-gradient ms-2'} style={{cursor: "pointer"}} onClick={() => setShowLogin(!showLogin)} variant="link">S'enregistrer!</span>
+                            {`Vous n'avez pas de compte ?`}
+                            <span className={'link-primary theme-gradient ms-2'} style={{cursor: "pointer"}} onClick={() => setShowLogin(!showLogin)} variant="link">{`S'enregistrer!`}</span>
                         </>
 
                     ) : (

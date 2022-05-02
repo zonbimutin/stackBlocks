@@ -34,8 +34,8 @@ query Scores {
 `;
 
 export const USER_SCORES = gql`
-query Scores($filters : ScoreFiltersInput) {
-  scores(filters: $filters pagination: {page: 1 pageSize: 10}) {
+query Scores($filters:ScoreFiltersInput){
+  scores(filters: $filters pagination: {page: 1 pageSize: 10} sort:"value:desc"){
     data {
       attributes {
         value
